@@ -1,0 +1,7 @@
+/home/ligen/IdeaProjects/mango/mango-core/src/main/java/com/example/mango/core/http/HttpStatus.java
+/home/ligen/IdeaProjects/mango/mango-core/src/main/java/com/example/mango/core/page/PageRequest.java
+/home/ligen/IdeaProjects/mango/mango-core/src/main/java/com/example/mango/core/exception/MangoException.java
+/home/ligen/IdeaProjects/mango/mango-core/src/main/java/com/example/mango/core/http/HttpResult.java
+/home/ligen/IdeaProjects/mango/mango-core/src/main/java/com/example/mango/core/page/PageResult.java
+/home/ligen/IdeaProjects/mango/mango-core/src/main/java/com/example/mango/core/service/CurdService.java
+/home/ligen/IdeaProjects/mango/mango-core/src/main/java/com/example/mango/core/page/MybatisPageHelper.java
