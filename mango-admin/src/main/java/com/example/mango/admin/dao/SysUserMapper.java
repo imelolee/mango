@@ -22,4 +22,10 @@ public interface SysUserMapper {
      * @return
      */
     List<SysUser> findAll();
+
+    /**
+     * 分页查询
+     * @return
+     */
+    List<SysUser> findPage();
 }
