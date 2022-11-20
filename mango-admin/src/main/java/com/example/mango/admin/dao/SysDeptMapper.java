@@ -2,6 +2,8 @@ package com.example.mango.admin.dao;
 
 import com.example.mango.admin.model.SysDept;
 
+import java.util.List;
+
 public interface SysDeptMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +16,9 @@ public interface SysDeptMapper {
     int updateByPrimaryKeySelective(SysDept record);
 
     int updateByPrimaryKey(SysDept record);
+
+    List<SysDept> findPage();
+
+    List<SysDept> findAll();
+
 }
