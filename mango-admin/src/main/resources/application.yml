@@ -30,4 +30,3 @@ mybatis:
     - classpath:mapper/*.xml
     - classpath*:com/**/mapper/*.xml
 
-pagehelper
