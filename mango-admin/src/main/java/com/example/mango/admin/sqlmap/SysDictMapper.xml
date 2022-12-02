@@ -175,20 +175,21 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
   <select id="findPage" resultMap="BaseResultMap">
-    select
-        <include refid="Base_Column_List"/>
+    select 
+    <include refid="Base_Column_List" />
     from sys_dict
   </select>
   <select id="findPageByLabel" parameterType="java.lang.String" resultMap="BaseResultMap">
-    <bind name="pattern" value="'%'+ _parameter.label + '%'"/>
-    select
-    <include refid="Base_Column_List"/>
-        from sys_dict
+  	<bind name="pattern" value="'%' + _parameter.label + '%'" />
+  	select 
+    <include refid="Base_Column_List" />
+    from sys_dict
     where label like #{pattern}
   </select>
-  <select id="findByLabel" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select <include refid="Base_Column_List"/>
-        from sys_dict
-    where label = #{label, jdbcType=VARCHAR}
+  <select id="findByLable" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_dict
+    where label = #{label,jdbcType=VARCHAR}
   </select>
 </mapper>
