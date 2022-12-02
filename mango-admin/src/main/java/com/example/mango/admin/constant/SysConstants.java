@@ -4,5 +4,5 @@ public class SysConstants {
     /**
      * 系统管理员用户名
      */
-    String ADMIN = "admin";
+    public static final String ADMIN = "admin";
 }

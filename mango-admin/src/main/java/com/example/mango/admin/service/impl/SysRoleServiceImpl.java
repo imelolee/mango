@@ -1,57 +1,103 @@
 package com.example.mango.admin.service.impl;
 
+import com.example.mango.admin.constant.SysConstants;
+import com.example.mango.admin.dao.SysMenuMapper;
+import com.example.mango.admin.dao.SysRoleMapper;
+import com.example.mango.admin.dao.SysRoleMenuMapper;
 import com.example.mango.admin.model.SysMenu;
 import com.example.mango.admin.model.SysRole;
 import com.example.mango.admin.model.SysRoleMenu;
 import com.example.mango.admin.service.SysRoleService;
+import com.example.mango.core.page.MybatisPageHelper;
 import com.example.mango.core.page.PageRequest;
 import com.example.mango.core.page.PageResult;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class SysRoleServiceImpl implements SysRoleService {
+    @Autowired
+    private SysRoleMapper sysRoleMapper;
+    @Autowired
+    private SysRoleMenuMapper sysRoleMenuMapper;
+    @Autowired
+    private SysMenuMapper sysMenuMapper;
+
+    public SysRoleMapper getSysRoleMapper() {
+        return sysRoleMapper;
+    }
+
+    public void setSysRoleMapper(SysRoleMapper sysRoleMapper) {
+        this.sysRoleMapper = sysRoleMapper;
+    }
+
+
     @Override
     public List<SysRole> findAll() {
-        return null;
+        return sysRoleMapper.findAll();
     }
 
     @Override
     public List<SysMenu> findRoleMenus(Long roleId) {
-        return null;
+        SysRole sysRole = sysRoleMapper.selectByPrimaryKey(roleId);
+        if (SysConstants.ADMIN.equalsIgnoreCase(sysRole.getName())){
+            // 如果是超级管理员，返回全部
+            return sysMenuMapper.findAll();
+        }
+        return sysMenuMapper.findRoleMenus(roleId);
     }
 
     @Override
     public int saveRoleMenus(List<SysRoleMenu> records) {
-        return 0;
+        if (records == null || records.isEmpty()){
+            return 1;
+        }
+        Long roldId = records.get(0).getRoleId();
+        sysRoleMenuMapper.deleteByRoleId(roldId);
+        for(SysRoleMenu record:records) {
+            sysRoleMenuMapper.insertSelective(record);
+        }
+        return 1;
     }
 
     @Override
     public List<SysRole> findByName(String name) {
-        return null;
+        return sysRoleMapper.findByName(name);
     }
 
     @Override
     public int save(SysRole record) {
-        return 0;
+        if (record.getId() == null || record.getId() == 0) {
+            return sysRoleMapper.insertSelective(record);
+        }
+        return sysRoleMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
     public int delete(SysRole record) {
-        return 0;
+        return sysRoleMapper.deleteByPrimaryKey(record.getId());
     }
 
     @Override
     public int delete(List<SysRole> records) {
-        return 0;
+        for (SysRole record : records) {
+            delete(record);
+        }
+        return 1;
     }
 
     @Override
     public SysRole findById(Long id) {
-        return null;
+        return sysRoleMapper.selectByPrimaryKey(id);
     }
 
     @Override
     public PageResult findPage(PageRequest pageRequest) {
-        return null;
+        Object label = pageRequest.getParam("name");
+        if (label != null){
+            return MybatisPageHelper.findPage(pageRequest, sysRoleMapper, "findPageByName", label);
+        }
+
+        return MybatisPageHelper.findPage(pageRequest, sysRoleMapper);
     }
 }
