@@ -9,10 +9,11 @@ import com.example.mango.core.page.PageRequest;
 import com.example.mango.core.page.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 public class SysDictServiceImpl implements SysDictService {
-    @Autowired
+    @Resource
     private SysDictMapper sysDictMapper;
 
     @Override
