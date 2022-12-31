@@ -8,11 +8,12 @@ import com.example.mango.core.page.PageRequest;
 import com.example.mango.core.page.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 public class SysLoginLogServiceImpl implements SysLoginLogService {
 
-    @Autowired
+    @Resource
     private SysLoginLogMapper sysLoginLogMapper;
     @Override
     public int save(SysLoginLog record) {
