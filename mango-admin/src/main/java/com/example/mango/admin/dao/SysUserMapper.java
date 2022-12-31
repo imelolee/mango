@@ -3,6 +3,7 @@ package com.example.mango.admin.dao;
 import java.util.List;
 
 import com.example.mango.admin.model.SysUser;
+import org.apache.ibatis.annotations.Param;
 
 public interface SysUserMapper {
     int deleteByPrimaryKey(Long id);
@@ -28,4 +29,6 @@ public interface SysUserMapper {
      * @return
      */
     List<SysUser> findPage();
+
+    SysUser findByName(@Param(value="name") String name);
 }

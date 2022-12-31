@@ -8,12 +8,13 @@ import com.example.mango.core.page.PageRequest;
 import com.example.mango.core.page.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class SysMenuServiceImpl implements SysMenuService {
-    @Autowired
+    @Resource
     private SysMenuMapper sysMenuMapper;
 
     @Override
