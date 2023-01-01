@@ -1,10 +1,11 @@
 package com.example.mango.admin.dao;
 
 import com.example.mango.admin.model.SysRole;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
+@Mapper
 public interface SysRoleMapper {
     int deleteByPrimaryKey(Long id);
 

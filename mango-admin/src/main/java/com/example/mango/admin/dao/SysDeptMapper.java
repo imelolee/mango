@@ -1,9 +1,11 @@
 package com.example.mango.admin.dao;
 
 import com.example.mango.admin.model.SysDept;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
+@Mapper
 public interface SysDeptMapper {
     int deleteByPrimaryKey(Long id);
 

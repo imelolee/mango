@@ -16,6 +16,7 @@ import com.example.mango.core.page.PageRequest;
 import com.example.mango.core.page.PageResult;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -27,13 +28,13 @@ import java.util.*;
 
 @Service
 public class SysUserServiceImpl implements SysUserService {
-    @Resource
+    @Autowired
     private SysUserMapper sysUserMapper;
-    @Resource
+    @Autowired
     private SysMenuService sysMenuService;
-    @Resource
+    @Autowired
     private SysUserRoleMapper sysUserRoleMapper;
-    @Resource
+    @Autowired
     private SysRoleMapper sysRoleMapper;
 
 
