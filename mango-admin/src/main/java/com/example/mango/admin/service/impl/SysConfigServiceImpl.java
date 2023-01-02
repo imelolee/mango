@@ -7,10 +7,12 @@ import com.example.mango.core.page.MybatisPageHelper;
 import com.example.mango.core.page.PageRequest;
 import com.example.mango.core.page.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@Service
 public class SysConfigServiceImpl implements SysConfigService {
 
     @Resource
