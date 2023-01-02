@@ -5,7 +5,6 @@ import com.example.mango.admin.model.SysConfig;
 import com.example.mango.admin.service.SysConfigService;
 import com.example.mango.core.http.HttpResult;
 import com.example.mango.core.page.PageRequest;
-import com.example.mango.core.page.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
