@@ -6,7 +6,7 @@ import com.example.mango.admin.service.SysMenuService;
 import com.example.mango.core.page.MybatisPageHelper;
 import com.example.mango.core.page.PageRequest;
 import com.example.mango.core.page.PageResult;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.mango.admin.constant.SysConstants;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -69,7 +69,10 @@ public class SysMenuServiceImpl implements SysMenuService {
 
     @Override
     public List<SysMenu> findByUser(String userName) {
-        return null;
+        if(userName == null || "".equals(userName) || SysConstants.ADMIN.equalsIgnoreCase(userName)) {
+            return sysMenuMapper.findAll();
+        }
+        return sysMenuMapper.findByUserName(userName);
     }
 
     @Override

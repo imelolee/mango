@@ -10,15 +10,16 @@ import java.util.Collection;
  * @author genleel
  */
 public class JwtAuthenticatioToken extends UsernamePasswordAuthenticationToken {
+
     private static final long serialVersionUID = 1L;
 
     private String token;
 
-    public JwtAuthenticatioToken(Object principal, Object credentials) {
+    public JwtAuthenticatioToken(Object principal, Object credentials){
         super(principal, credentials);
     }
 
-    public JwtAuthenticatioToken(Object principal, Object credentials, String token) {
+    public JwtAuthenticatioToken(Object principal, Object credentials, String token){
         super(principal, credentials);
         this.token = token;
     }
@@ -36,7 +37,8 @@ public class JwtAuthenticatioToken extends UsernamePasswordAuthenticationToken {
         this.token = token;
     }
 
-    public static long getSerialVersionUID(){
+    public static long getSerialversionuid() {
         return serialVersionUID;
     }
+
 }
