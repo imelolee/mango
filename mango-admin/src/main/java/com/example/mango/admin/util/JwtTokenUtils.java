@@ -209,7 +209,7 @@ public class JwtTokenUtils implements Serializable {
     private static Claims getClaimsFromToken(String token) {
         Claims claims;
         try {
-            claims = Jwts.parser().setSigningKey(SECRET).parseClaimsJwt(token).getBody();
+            claims = Jwts.parser().setSigningKey(SECRET).parseClaimsJws(token).getBody();
         } catch (Exception e) {
             claims = null;
         }
