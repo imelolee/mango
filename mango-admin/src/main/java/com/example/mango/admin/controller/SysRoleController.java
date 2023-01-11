@@ -22,9 +22,9 @@ import java.util.List;
 @RequestMapping("role")
 public class SysRoleController {
 
-    @Autowired(required = false)
+    @Autowired
     private SysRoleService sysRoleService;
-    @Autowired(required = false)
+    @Autowired
     private SysRoleMapper sysRoleMapper;
 
     @PreAuthorize("hasAuthority('sys:role:add') AND hasAuthority('sys:role:edit')")
