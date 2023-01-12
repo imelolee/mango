@@ -94,7 +94,7 @@ public class MySqlBackupController {
     }
 
     @GetMapping("/delete")
-    public HttpResult deleteBackupRecord(@RequestParam String name){
+    public HttpResult deleteBackupRecord(@RequestParam String name) throws Exception{
         if (BackupConstants.DEFAULT_BACKUP_NAME.equalsIgnoreCase("name")){
             return HttpResult.error("系统默认备份无法删除");
         }
@@ -102,8 +102,11 @@ public class MySqlBackupController {
         try {
             FileUtils.deleteFile(new File(restoreFilePath));
         } catch (Exception e){
-            return HttpResult.error(500, e.getMessage());
+            e.printStackTrace();
+            return HttpResult.error("备份删除失败");
         }
+
+
         return HttpResult.ok();
     }
 
