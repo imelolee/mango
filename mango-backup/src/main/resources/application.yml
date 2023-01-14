@@ -1,0 +1,30 @@
+# tomcat
+server:
+  port: 8081
+spring:
+  application:
+    name: mango-backup
+  boot:
+    admin:
+      client:
+        url: "http://localhost:8000"
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# backup datasource
+mango:
+  backup:
+    datasource:
+      host: localhost
+      userName: root
+      password: password
+      database: mango

@@ -1,0 +1,10 @@
+com\example\mango\backup\constants\BackupConstants.class
+com\example\mango\backup\datasource\BackupDataSourceProperties.class
+com\example\mango\backup\util\MySqlBackupRestoreUtils.class
+com\example\mango\backup\config\SwaggerConfig.class
+com\example\mango\backup\service\MysqlBackupService.class
+com\example\mango\backup\service\impl\MysqlBackupServiceImpl.class
+com\example\mango\backup\util\HttpResult.class
+com\example\mango\backup\controller\MySqlBackupController.class
+com\example\mango\backup\MangoBackupApplication.class
+com\example\mango\backup\config\CorsConfig.class
