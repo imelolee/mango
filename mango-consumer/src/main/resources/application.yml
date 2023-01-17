@@ -22,3 +22,14 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+
+## ribbon负载均衡配置
+#service-producer:
+#  ribbon:
+#    NFLoadBalanceRuleClassName: com.netflix.loadbalancer.RandomRule
+
+#开启熔断器
+feign:
+  circuitbreaker:
+    enabled: true
+
