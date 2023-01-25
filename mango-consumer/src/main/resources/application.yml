@@ -30,6 +30,6 @@ management:
 
 #开启熔断器
 feign:
-  circuitbreaker:
+  hystrix:
     enabled: true
 
