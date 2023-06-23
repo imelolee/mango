@@ -1,5 +1,5 @@
-com\example\mango\common\utils\DateTimeUtils.class
-com\example\mango\common\utils\PoiUtils.class
-com\example\mango\common\utils\FileUtils.class
-com\example\mango\common\utils\IOUtils.class
-com\example\mango\common\utils\ReflectionUtils.class
+com/example/mango/common/utils/PoiUtils.class
+com/example/mango/common/utils/FileUtils.class
+com/example/mango/common/utils/DateTimeUtils.class
+com/example/mango/common/utils/ReflectionUtils.class
+com/example/mango/common/utils/IOUtils.class
