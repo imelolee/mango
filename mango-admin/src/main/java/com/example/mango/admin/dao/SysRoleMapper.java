@@ -1,5 +1,6 @@
 package com.example.mango.admin.dao;
 
+import com.example.mango.admin.model.SysDict;
 import com.example.mango.admin.model.SysRole;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -21,7 +22,11 @@ public interface SysRoleMapper {
 
     List<SysRole> findAll();
 
+    List<SysDict> findPage();
+
     List<SysRole> findPageByName(@Param(value="name") String name);
 
     List<SysRole> findByName(@Param(value="name") String name);
+
+
 }

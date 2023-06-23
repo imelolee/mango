@@ -40,6 +40,15 @@ public class SysRoleServiceImpl implements SysRoleService {
     }
 
     @Override
+    public PageResult findPage(PageRequest pageRequest){
+        String label = pageRequest.getParamValue("name");
+        if (label != null){
+            return MybatisPageHelper.findPage(pageRequest, sysRoleMapper, "findPageByName", label);
+        }
+        return MybatisPageHelper.findPage(pageRequest, sysRoleMapper);
+    }
+
+    @Override
     public List<SysMenu> findRoleMenus(Long roleId) {
         SysRole sysRole = sysRoleMapper.selectByPrimaryKey(roleId);
         if (SysConstants.ADMIN.equalsIgnoreCase(sysRole.getName())){
@@ -93,13 +102,4 @@ public class SysRoleServiceImpl implements SysRoleService {
         return sysRoleMapper.selectByPrimaryKey(id);
     }
 
-    @Override
-    public PageResult findPage(PageRequest pageRequest) {
-        Object label = pageRequest.getParam("name");
-        if (label != null){
-            return MybatisPageHelper.findPage(pageRequest, sysRoleMapper, "findPageByName", label);
-        }
-
-        return MybatisPageHelper.findPage(pageRequest, sysRoleMapper);
-    }
 }
