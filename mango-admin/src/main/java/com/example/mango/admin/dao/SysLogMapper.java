@@ -2,6 +2,9 @@ package com.example.mango.admin.dao;
 
 import com.example.mango.admin.model.SysLog;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface SysLogMapper {
@@ -16,4 +19,8 @@ public interface SysLogMapper {
     int updateByPrimaryKeySelective(SysLog record);
 
     int updateByPrimaryKey(SysLog record);
+
+    List<SysLog> findPage();
+
+    List<SysLog> findPageByUserName(@Param(value="userName") String userName);
 }
