@@ -217,7 +217,7 @@
     where u.name = #{name,jdbcType=VARCHAR}
   </select>
   <select id="findPageByName" parameterType="java.lang.String" resultMap="BaseResultMap">
-  	<bind name="pattern" value="'%' + _parameter.name + '%'" />
+    <bind name="pattern" value="'%' + _parameter.name + '%'" />
     select u.*, (select d.name from sys_dept d where d.id = u.dept_id) deptName from sys_user u
     where u.name like #{pattern}
   </select>
